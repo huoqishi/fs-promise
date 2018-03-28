@@ -1,5 +1,5 @@
 {
-  "name": "fs-promise",
+  "name": "fs-promise-polyfill",
   "version": "1.0.0",
   "description": "fs, file, promise, api",
   "main": "index.js",
