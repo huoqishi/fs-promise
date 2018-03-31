@@ -55,14 +55,12 @@ obj.exists = path => new Promise((resolve, reject) => {
  * @param  {[type]} dirpath [description]
  * @return {[type]}         [description]
  */
-obj.mkdirSync = dirpath => {
-  if (obj.existsSync(dirpath)) {
+obj.mkdirSync = dirname => {
+  if (fs.existsSyncNull(dirname)) {
     return true
   }
-  obj.mkdirSync(path.dirname(dirpath))
-  const result = fs.mkdirSync(dirpath)
-  if (result instanceof Error) {
-    return false
+  if (obj.mkdirSync(path.dirname(dirname))) {
+    const result = fs.mkdirSyncNull(dirname)
+    return result !== null
   }
-  return true
 }
